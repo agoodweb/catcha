@@ -1,0 +1,147 @@
+@import "normalize.css";
+// @import "reset.css";
+@import "clearfix.css";
+
+// Mixins
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+// Font Stacks
+
+$color: #3cb878;
+$color-lighter: lighten($color, 30%);
+$font-stack-lucida: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+
+// CSS
+
+body {
+  padding: 50px;
+}
+
+table.catcha {
+  background-color: $color;
+  border-collapse: separate;
+  border: 4px $color solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.catcha-row1_title, .catcha-row1_questionmark, .catcha-row1_location {
+  display: table-cell;
+  img {
+    display: table-cell;
+  }
+}
+
+.catcha-row1_title {
+  padding-left: 8px;
+}
+
+.catcha-row1_questionmark {
+// stuff goes here
+}
+
+.catcha-row1_location {
+  text-align: right;
+  float: right;
+  padding-right: 8px;
+}
+
+.catcha-row1_locationtext {
+  line-height: 30px;
+  font-size: 13px;
+  font-family: $font-stack-lucida;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.catcha-row1_locationimg {
+  display: table-cell;
+  img {
+    display: table-cell;
+  }
+}
+
+.catcha-row2 {
+// stuff goes here
+}
+
+.catcha-row2_left {
+  background-color: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  vertical-align: top;
+  .captcha-text {
+    line-height: 16px;
+    font-size: 13px;
+    font-family: $font-stack-lucida;
+    padding-top: 10px;
+    width: 176px;
+  }
+  .captcha-image {
+    padding-top: 14px;
+  }
+  .form-items {
+    padding-top: 8px;
+    vertical-align: baseline;
+  }
+  .form-btn {
+    display: inline-block;
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+  form {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  input {
+    width: 126px;
+    height: 23px;
+    border-radius: 4px;
+    border: 1px solid #aaaaaa;
+    padding: 0;
+    margin: 0;
+    @include placeholder {
+      font-size: 13px;
+      color: #bbbbbb;
+      padding-left: 4px;
+      letter-spacing: 0px;
+    }
+  }
+}
+
+.catcha-row2_divider {
+  background-color: $color-lighter;
+}
+
+.catcha-row2_right {
+  background-color: white;
+  padding-left: 7px;
+  vertical-align: top;
+  .cat-label {
+    text-transform: uppercase;
+    font-family: $font-stack-lucida;
+    font-size: 10px;
+    color: #bbbbbb;
+    padding-top: 4px;
+  }
+  .cat-name {
+    font-family: $font-stack-lucida;
+    font-size: 13px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .cat-picture {
+    padding-top: 2px;
+  }
+  .cat-adopt {
+    padding-top: 2px;
+  }
+}
