@@ -1,4 +1,4 @@
 catcha
 ======
 
-Derps
+<img src="http://i.imgur.com/XeHLQak.jpg"/>
