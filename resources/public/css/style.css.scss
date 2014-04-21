@@ -27,6 +27,12 @@ table.catcha {
   border-top-right-radius: 10px;
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .catcha-row1_title, .catcha-row1_questionmark, .catcha-row1_location {
   display: table-cell;
   img {
@@ -56,6 +62,7 @@ table.catcha {
   display: table-cell;
   vertical-align: middle;
   padding-right: 5px;
+  max-width: 160px;
 }
 
 .catcha-row1_locationimg {
@@ -141,12 +148,7 @@ table.catcha {
     font-size: 13px;
     padding-top: 0;
     margin-top: 0;
-  }
-  .truncate {
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: 92px;
   }
   .cat-picture {
     width: 92px;

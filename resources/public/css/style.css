@@ -7,6 +7,11 @@ table.catcha {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px; }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .catcha-row1_title, .catcha-row1_questionmark, .catcha-row1_location {
   display: table-cell; }
   .catcha-row1_title img, .catcha-row1_questionmark img, .catcha-row1_location img {
@@ -27,7 +32,8 @@ table.catcha {
   color: white;
   display: table-cell;
   vertical-align: middle;
-  padding-right: 5px; }
+  padding-right: 5px;
+  max-width: 160px; }
 
 .catcha-row1_locationimg {
   display: table-cell; }
@@ -105,12 +111,8 @@ table.catcha {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
     padding-top: 0;
-    margin-top: 0; }
-  .catcha-row2_right .truncate {
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
+    margin-top: 0;
+    max-width: 92px; }
   .catcha-row2_right .cat-picture {
     width: 92px;
     height: 86px;
