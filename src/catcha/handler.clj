@@ -6,7 +6,6 @@
            javax.imageio.ImageIO)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [catcha.captcha :as captcha]
             [net.cgrand.enlive-html :refer [deftemplate content set-attr]]))
 
 (deftemplate tpl-catcha "templates/catcha.html"
