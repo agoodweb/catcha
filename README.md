@@ -1,6 +1,6 @@
 # CATCHA
 
-FIXME
+A captcha that also allows you to adopt a cat near you.
 
 ## Prerequisites
 
