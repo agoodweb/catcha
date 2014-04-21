@@ -1,8 +1,5 @@
 @import url(normalize.css);
 @import url(clearfix.css);
-body {
-  padding: 50px; }
-
 table.catcha {
   background-color: #3cb878;
   border-collapse: separate;
