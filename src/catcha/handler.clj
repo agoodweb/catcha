@@ -15,18 +15,22 @@
 
 (deftemplate tpl-catcha "templates/catcha.html"
   [id name picture]
-  [:.cat-name] (content name)
+  [:.cat-name] (content (if (> (count name) 13) (str (subs name 0 10) "...") name))
   [:.captcha-image :img] (set-attr :src "/api/v1/image")
-  ; [:.cat-picture :img] (set-attr :src picture)
+  [:.cat-picture :div] (set-attr :style (str "background: url(" picture ") no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; border-radius: 8px; height: 86px;"))
   [:.cat-adopt :a] (set-attr :href (str "http://www.petfinder.com/petdetail/" id)))
 
-(defn random-cat
+(defn random-cat-with-picture
   []
-  (pets/random-pet *creds* {:animal "cat"}))
+  (let [cat  (pets/random-pet *creds* {:animal "cat"})
+        picture (get-in cat [:media :photos 1 "fpm"])]
+    (if picture
+      cat
+      (random-cat-with-picture))))
 
 (defn serve-catcha
   [r]
-  (let [cat (random-cat)]
+  (let [cat (random-cat-with-picture)]
     (tpl-catcha (:id cat) (:name cat) (get-in cat [:media :photos 1 "fpm"]))))
 
 (defroutes app-routes
