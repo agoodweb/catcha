@@ -17,7 +17,7 @@
   [id name picture]
   [:.cat-name] (content name)
   [:.captcha-image :img] (set-attr :src "/api/v1/image")
-  [:.cat-picture :img] (set-attr :src picture)
+  ; [:.cat-picture :img] (set-attr :src picture)
   [:.cat-adopt :a] (set-attr :href (str "http://www.petfinder.com/petdetail/" id)))
 
 (defn random-cat
@@ -56,7 +56,7 @@
          key
          "Sorry, you need to supply an API key as a parameter"))
 
-  
+
   (route/resources "/")
   (route/not-found "Not Found"))
 

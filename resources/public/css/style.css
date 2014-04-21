@@ -106,8 +106,7 @@ table.catcha {
     padding-top: 0;
     margin-top: 0; }
   .catcha-row2_right .cat-picture {
-    padding-top: 2px; }
-    .catcha-row2_right .cat-picture img {
-      border-radius: 8px; }
+    width: 92px;
+    height: 86px; }
   .catcha-row2_right .cat-adopt {
-    padding-top: 3px; }
+    padding-top: 9px; }
