@@ -49,7 +49,7 @@ table.catcha {
 }
 
 .catcha-row1_locationtext {
-  line-height: 30px;
+  line-height: 28px;
   font-size: 13px;
   font-family: $font-stack-lucida;
   color: white;
@@ -133,7 +133,8 @@ table.catcha {
     font-family: $font-stack-lucida;
     font-size: 10px;
     color: #bbbbbb;
-    padding-top: 4px;
+    padding-top: 7px;
+    line-height: 10px;
   }
   .cat-name {
     font-family: $font-stack-lucida;
@@ -141,9 +142,16 @@ table.catcha {
     padding-top: 0;
     margin-top: 0;
   }
+  .truncate {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .cat-picture {
     width: 92px;
     height: 86px;
+    padding-top: 2px;
   }
   .cat-adopt {
     padding-top: 9px;

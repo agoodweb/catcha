@@ -21,7 +21,7 @@ table.catcha {
   padding-right: 8px; }
 
 .catcha-row1_locationtext {
-  line-height: 30px;
+  line-height: 28px;
   font-size: 13px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   color: white;
@@ -99,14 +99,21 @@ table.catcha {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
     font-size: 10px;
     color: #bbbbbb;
-    padding-top: 4px; }
+    padding-top: 7px;
+    line-height: 10px; }
   .catcha-row2_right .cat-name {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
     padding-top: 0;
     margin-top: 0; }
+  .catcha-row2_right .truncate {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .catcha-row2_right .cat-picture {
     width: 92px;
-    height: 86px; }
+    height: 86px;
+    padding-top: 2px; }
   .catcha-row2_right .cat-adopt {
     padding-top: 9px; }
