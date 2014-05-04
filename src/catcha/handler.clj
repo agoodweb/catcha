@@ -1,17 +1,15 @@
 (ns catcha.handler
   (:use compojure.core)
-  (:import java.io.ByteArrayInputStream
-           java.io.ByteArrayOutputStream
-           nl.captcha.Captcha
-           javax.imageio.ImageIO
-           java.awt.Color)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [net.cgrand.enlive-html :refer [deftemplate content set-attr]]
             [clj-petfinder.core :as pets]
-            [clojure.edn :as edn]))
+            [clojure.edn :as edn]
+            [catcha.captcha :as captcha :refer [new-captcha]]))
 
-(def ^:dynamic *creds* (edn/read-string (slurp "config/petfinder.edn")))
+(def ^:dynamic *creds*
+  "Load credentials from settings file"
+  (edn/read-string (slurp "config/petfinder.edn")))
 
 (deftemplate tpl-catcha "templates/catcha.html"
   [id name picture]
@@ -42,17 +40,7 @@
        []
        {:status 200
         :headers {"Content-Type" "image/png"}
-        :body (with-open [baos  (ByteArrayOutputStream.)]
-                (ImageIO/write (-> (doto (nl.captcha.Captcha$Builder. 176 50)
-                                     .addText
-                                     .gimp
-                                     (.addBackground (nl.captcha.backgrounds.GradiatedBackgroundProducer.))
-                                     (.addNoise (nl.captcha.noise.CurvedLineNoiseProducer.))
-                                     .addBorder)
-                                   .build
-                                   .getImage) "png" baos)
-                (.flush baos)
-                (ByteArrayInputStream. (.toByteArray baos)))
+        :body {:image (new-captcha)}
         })
 
   (GET "/api/v1/iframe" {params :params}
@@ -66,4 +54,3 @@
 
 (def app
   (handler/site app-routes))
-
