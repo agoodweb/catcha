@@ -7,7 +7,9 @@
                  [enlive "1.1.5"]
                  [clj-http "0.9.0"]
                  [clj-petfinder "0.1.0-SNAPSHOT"]
-                 [org.clojars.smallrivers/simplecaptcha "1.2.1"]]
+                 [org.clojars.smallrivers/simplecaptcha "1.2.1"]
+                 [com.taoensso/carmine "2.6.2"]
+                 [crypto-random "1.2.0"]]
   :plugins [[lein-ring "0.8.10"]]
   :ring {:handler catcha.handler/app}
   :profiles
